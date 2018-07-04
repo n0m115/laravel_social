@@ -1,0 +1,103 @@
+/* Global Styles */
+
+html,
+body {
+    height: 100%;
+}
+/* BROWSER SPECIFICATION STYLES */ 
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+}
+a {
+    transition: all 0.4s ease-in-out;
+    text-decoration: none;
+}
+a:hover, a:focus {
+    text-decoration: none;
+}
+
+h3 {
+    padding: 10px 0px;
+}
+
+h3:after {
+    content: "";
+    display: block;
+    border-bottom: 2px solid #337ab7;
+    width: 60px;
+    padding-top: 3px;
+}
+
+label {
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.new-post {
+    padding: 16px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.new-post header,
+.posts header {
+    margin-bottom: 20px;
+}
+
+.posts .post {
+    padding-left: 10px;
+    border-left: 3px solid #a21b24;
+    margin-bottom: 30px;
+}
+
+.posts .post .info {
+    color: #aaa;
+    font-style: italic;
+}
+
+.error,
+.success {
+    text-align: center;
+}
+
+.error {
+    border: 1px solid red;
+    background-color: #f9b5af;
+    color: red;
+}
+
+.error ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.success {
+    border: 1px solid green;
+    background-color: #d1f9da;
+    color: green;
+}
+
+.my-alert {
+    padding: 8px;
+    margin-bottom: 2px;
+    list-style-type: none;
+    font-size: 15px;
+}
+
+.marg-bot-15 {
+    margin-bottom: 15px;
+}
+
+.new-post .profile-img-small {
+    border-radius: 10px;
+    max-width: 100px;
+}
+
+.required {
+    color: #f00;
+}
