@@ -38,6 +38,10 @@ label {
     font-size: 14px;
 }
 
+p {
+    font-size: 15px;
+}
+
 .new-post {
     padding: 16px 0;
     border-bottom: 1px solid #ccc;

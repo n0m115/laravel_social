@@ -27,14 +27,12 @@ class UserController extends Controller
 
         $this->validate($request, $validate_array);
 
-        $email = $request['email'];
-        $first_name = $request['first_name'];
-        $password = bcrypt($request['password']);
-
         $user = new User();
-        $user->email = $email;
-        $user->first_name = $first_name;
-        $user->password = $password;
+        $user->email = $request['email'];
+        $user->first_name = $request['first_name'];
+        $user->last_name = $request['last_name'];
+        $user->date_of_birth = date('Y-m-d H:i:s', strtotime($request['date_of_birth']));
+        $user->password = bcrypt($request['password']);
 
         $user->save();
 
@@ -49,7 +47,7 @@ class UserController extends Controller
             'email_login' => 'required',
             'password_login' => 'required'
         ]);
-        
+
         if (Auth::attempt(['email' => $request['email_login'], 'password' => $request['password_login']])) {
             return redirect()->route('dashboard');
         }
@@ -75,7 +73,18 @@ class UserController extends Controller
 
         $user = Auth::user();
         $old_name = $user->first_name;
+        
         $user->first_name = $request['first_name'];
+        $user->date_of_birth = date('Y-m-d H:i:s', strtotime($request['date_of_birth']));
+
+        if (!empty($request['last_name'])) {
+            $user->last_name = $request['last_name'];
+        }
+
+        if (!empty($request['password'])) {
+            $user->password = bcrypt($request['password']);
+        }
+
         $user->update();
         $file = $request->file('image');
         $filename = $request['first_name'] . '-' . $user->id . '.jpg';
