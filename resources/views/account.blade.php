@@ -24,7 +24,7 @@
                 <div class="form-group">
                     <label for="date_of_birth">Date of Birth</label>
                     <div class="input-group datetimepicker">
-                        <input type="text" class="form-control" name="date_of_birth" id="date_of_birth" value="{{ date('d-m-Y h:i:s A', strtotime($user->date_of_birth)) }}">
+                        <input type="text" class="form-control" name="date_of_birth" id="date_of_birth" value="{{ ($user->date_of_birth != Config::get('constants.globals.default_timestamp')) ? date('d-m-Y h:i:s A', strtotime($user->date_of_birth)) : '' }}">
                         <span class="input-group-addon">
                             <span class="glyphicon glyphicon-calendar"></span>
                         </span>
